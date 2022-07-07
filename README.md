@@ -59,6 +59,7 @@ git clone https://github.com/facebookresearch/iopath --single-branch --branch v0
 open `iopath/iopath/common/file_io.py` 
 file, in class `HTTPURLHandler` and it's `_get_local_path` method,  in line 753 replace:
 * `filename = path.split("/")[-1]`
+
 with:
 * `filename = parsed_url.path.split("/")[-1]`
 
