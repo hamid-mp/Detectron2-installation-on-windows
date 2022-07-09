@@ -51,11 +51,13 @@ The result should be like this:
 ## 🛠 Correct unix paths
 There is one more thing to do. we should refine unix paths which are `/` to windows `\`, we 
 * __step1__ :
+
  download `iopath`:
 ```bash
 git clone https://github.com/facebookresearch/iopath --single-branch --branch v0.1.8
 ```
-* __step 2__:  
+* __step 2__: 
+  
 open `iopath/iopath/common/file_io.py` 
 file, in class `HTTPURLHandler` and it's `_get_local_path` method,  in line 753 replace:
 * `filename = path.split("/")[-1]`
@@ -64,7 +66,8 @@ with:
 * `filename = parsed_url.path.split("/")[-1]`
 
 
-* __step 3__ :  
+* __step 3__ :
+  
 Open a terminal with administrator premission, go to your local `iopath` repository and run following command:
 
 ```bash
